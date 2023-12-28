@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".onboarding.AlgorithmFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/toolbar_bg">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#00221B3C"
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/arrow_back"
+                android:layout_gravity="left"/>
+            <TextView
+                android:id="@+id/toolbartext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Secure Cipher"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <ImageView
+            android:id="@+id/algorithm_image"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:src="@drawable/caecercipher"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <RatingBar
+            android:id="@+id/algorithm_rate"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/yellow"
+            android:rating="1"
+            android:stepSize="0.1"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/algorithm_image"/>
+
+        <TextView
+            android:id="@+id/algorithm_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            android:text="@string/caecer_cipher"
+            app:layout_constraintTop_toBottomOf="@id/algorithm_rate"
+            android:textStyle="italic"
+            android:textAlignment="center"
+            android:textSize="22sp"
+            android:typeface="serif"/>
+
+
+        <LinearLayout
+            android:id="@+id/liniar_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="12"
+            android:layout_marginVertical="16dp"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/algorithm_desc">
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_weight="3"
+                android:layout_marginVertical="12dp"
+                app:dividerColor="@color/bg_color"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:typeface="serif"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:text="What Are You Want ?"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_weight="3"
+                android:layout_marginVertical="12dp"
+                app:dividerColor="@color/bg_color"/>
+        </LinearLayout>
+        <RadioGroup
+            android:id="@+id/radiogroub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/liniar_layout"
+            >
+            <RadioButton
+                android:id="@+id/encripselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Encryption"
+                android:checked="true"
+                android:buttonTint="@color/bg_color"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <RadioButton
+                android:id="@+id/decripselect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Decription"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/plaintextdefault"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/radiogroub"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/plaintextdefaultfield"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Plain Text"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/key"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/plaintextdefault"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/keyfield"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Key"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ciphertextdefault"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/key"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ciphertextdefaultfield"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Cipher Text"
+                android:enabled="false"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/operationbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="70dp"
+            android:layout_marginTop="9dp"
+            android:backgroundTint="@color/bg_color"
+            android:padding="12dp"
+            android:text="Enceryption"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/algorithm_image"
+            app:layout_constraintStart_toStartOf="@id/algorithm_image"
+            app:layout_constraintTop_toBottomOf="@id/ciphertextdefault" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

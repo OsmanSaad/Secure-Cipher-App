@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Secure Cipher</string>
+
+    <string name="encription_term">Algorithm that transforms plaintext to ciphertext</string>
+    <string name="decription_term">Algorithm that transforms ciphertext back to plaintext</string>
+    <string name="plaintext_term">The original message before encryption</string>
+    <string name="cipher_term">The coded message after encryption</string>
+
+    <string name="caecer_cipher">The Caesar cipher is a weak encryption technique due to its simplicity and vulnerability to various cryptanalysis methods.</string>
+    <string name="playfair_cipher">The Playfair cipher is relatively stronger than the remaining algorithms due to its polygraphic nature and key-dependent letter substitutions.</string>
+    <string name="hill_cipher">While not as secure as the one-time pad, the Hill cipher offers a higher level of security compared to the other algorithms on the list.</string>
+    <string name="onetimepad_cipher">This algorithm provides perfect security when implemented correctly, making it the most secure encryption technique.</string>
+    <string name="rowcolumn_cipher">Although it offers limited security, the row transposition cipher is slightly more secure than the following algorithm.</string>
+    <string name="railfance_cipher">The rail fence technique is the least secure among the listed algorithms, being susceptible to frequency analysis and other attacks due to its predictable pattern.</string>
+    <string name="monoalphabetic">The monoalphabetic cipher\'s consistent letter substitution renders it weak, susceptible to attacks like frequency analysis due to its predictable pattern.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
